@@ -6,7 +6,7 @@ import './style.css'
 let app = new Vue({
   el: '#app',
   data: {
-    arguments: []
+    show: false
   },
   components: {
     AnchorLink
