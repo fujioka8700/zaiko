@@ -17,7 +17,10 @@ module.exports = {
                 use: ['vue-style-loader',
                     {
                         loader: 'css-loader',
-                        options: { url: false }
+                        options: {
+                            url: false,
+                            sourceMap: true
+                        }
                     },
                     'postcss-loader'
                 ],
@@ -28,7 +31,10 @@ module.exports = {
                     'style-loader',
                     {
                         loader: 'css-loader',
-                        options: { url: false }
+                        options: {
+                            url: false,
+                            sourceMap: true
+                        }
                     },
                     'sass-loader'
                 ],
