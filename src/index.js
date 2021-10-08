@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import AnchorLink from './components/AnchorLink.vue'
+import tailwindcssBreakpoint from './components/TailwindCssBreakpoint.vue'
 import './style.scss'
 import './style.css'
 
@@ -9,6 +10,7 @@ let app = new Vue({
     show: false
   },
   components: {
-    AnchorLink
+    AnchorLink,
+    tailwindcssBreakpoint
   }
 })
