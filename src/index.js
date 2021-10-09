@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import AnchorLink from './components/AnchorLink.vue'
 import TailwindcssBreakpoint from './components/TailwindCssBreakpoint.vue'
 import PageHeader from './components/PageHeader.vue'
 import ArticleList from './components/ArticleList.vue'
 import AsideList from './components/AsideList.vue'
+import PageFooter from './components/PageFooter.vue'
 import './style.scss'
 import './style.css'
 
@@ -13,10 +13,10 @@ let app = new Vue({
     show: false
   },
   components: {
-    AnchorLink,
     TailwindcssBreakpoint,
     PageHeader,
     ArticleList,
-    AsideList
+    AsideList,
+    PageFooter
   }
 })
