@@ -14,7 +14,7 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         check: "url('/icons/check.svg')",
-        landscape: "url('/images/landscape/2.jpg')",
+        // landscape: "url('/images/landscape/2.jpg')",
       }),
     },
   },
@@ -26,7 +26,27 @@ module.exports = {
       zIndex: ["hover", "active"],
     },
   },
-  plugins: [],
+  plugins: [
+    function({addComponents}) {
+      addComponents({
+        ".container": {
+          maxWidth: "90%",
+          "@screen sm": {
+            maxWidth: "600px",
+          },
+          "@screen md": {
+            maxWidth: "700px",
+          },
+          "@screen lg": {
+            maxWidth: "900px",
+          },
+          "@screen xl": {
+            maxWidth: "1100px",
+          },
+        }
+      })
+    },
+  ],
   future: {
     purgeLayersByDefault: true,
   },

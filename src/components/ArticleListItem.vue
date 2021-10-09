@@ -1,49 +1,61 @@
 <template>
-    <div class="flex max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden border border-red-400">
-        <div class="w-1/3 bg-cover bg-landscape">
+    <div class="mt-3 mx-auto flex items-center max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="m-2 w-1/3 bg-cover bg-landscape">
+            <img :src="imageSrc" :alt="name" class="max-h-48 mx-auto">
         </div>
         <div class="w-2/3 p-4">
-            <h1 class="text-gray-900 font-bold text-2xl">
-                Tomorow
+            <h1 class="text-gray-900 font-bold text-2xl border-b-2 border-gray-100 mb-2">
+                {{ name }}
             </h1>
-            <p class="mt-2 text-gray-600 text-sm">
-                You can&#x27;t buy your future, but you can do it. Money is nothing, you&#x27;r everything.
-            </p>
-            <div class="flex item-center mt-2">
-                <svg class="w-5 h-5 fill-current text-gray-700" viewBox="0 0 24 24">
-                    <path
-                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z">
-                    </path>
-                </svg>
-                <svg class="w-5 h-5 fill-current text-gray-700" viewBox="0 0 24 24">
-                    <path
-                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z">
-                    </path>
-                </svg>
-                <svg class="w-5 h-5 fill-current text-gray-700" viewBox="0 0 24 24">
-                    <path
-                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z">
-                    </path>
-                </svg>
-                <svg class="w-5 h-5 fill-current text-gray-500" viewBox="0 0 24 24">
-                    <path
-                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z">
-                    </path>
-                </svg>
-                <svg class="w-5 h-5 fill-current text-gray-500" viewBox="0 0 24 24">
-                    <path
-                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z">
-                    </path>
-                </svg>
+            <span class="mt-2 text-gray-600 text-sm">
+                在庫数：
+            </span>
+            <input class="border" type="number" name="" id="" :value="stock">
+            <div class="flex justify-around mt-2">
+                <IconButton>
+                    <template v-slot:changes>
+                        <span>▲</span>
+                    </template>
+                </IconButton>
+                <IconButton>
+                    <template v-slot:changes>
+                        <span>▼</span>
+                    </template>
+                </IconButton>
             </div>
-            <div class="flex item-center justify-between mt-3">
-                <h1 class="text-gray-700 font-bold text-xl">
-                    $220
+            <div class="mt-3">
+                <h1 class="text-gray-700 text-sm">
+                    最終更新日：{{ updateTime }}
                 </h1>
-                <button class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-                    Add to Card
-                </button>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+import IconButton from './buttons/IconButton.vue'
+
+export default {
+    components: {
+        IconButton
+    },
+    props: {
+        name: {
+            type: String,
+            required: true
+        },
+        imageSrc: {
+            type: String,
+            required: true
+        },
+        stock: {
+            type: Number,
+            required: true
+        },
+        updateTime: {
+            type: String,
+            required: true
+        }
+    }
+}
+</script>
